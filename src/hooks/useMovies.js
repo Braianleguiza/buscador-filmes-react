@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useRef, useState, useMemo, useCallback } from "react";
 import { searchMovies } from "../services/movies";
 
@@ -25,9 +26,14 @@ export function useMovies({ search, sort }) {
         }
     }, []);
 
+    // Definindo um valor padrão (array vazio) para movies
+    const validMovies = movies || [];
+
     const sortedMovies = useMemo(() => {
-        return sort ? [...movies].sort((a, b) => b.year - a.year) : movies;
-    }, [movies, sort]);
+        return sort
+            ? [...validMovies].sort((a, b) => a.year - b.year)
+            : validMovies;
+    }, [validMovies, sort]);
 
     return { movies: sortedMovies, getMovies, loading };
 }

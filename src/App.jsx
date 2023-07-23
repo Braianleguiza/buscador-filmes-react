@@ -48,13 +48,12 @@ function App() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        getMovies({ search });
+        getMovies(search);
     };
-
     const handleChange = (event) => {
         const newSearch = event.target.value;
-        updateSearch(event.target.value);
         debouncedGetMovies(newSearch);
+        updateSearch(event.target.value);
     };
     const handleSort = () => {
         setSort(!sort);
