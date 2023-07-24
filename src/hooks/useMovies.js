@@ -5,7 +5,7 @@ import { searchMovies } from "../services/movies";
 export function useMovies({ search, sort }) {
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
+    const [problem, setError] = useState(null);
     const previousSearch = useRef(search);
 
     const getMovies = useCallback(async (search) => {
@@ -20,7 +20,7 @@ export function useMovies({ search, sort }) {
             setMovies(newMovies);
         } catch (error) {
             setError(error.message);
-            console.log(error);
+            console.log(problem);
         } finally {
             setLoading(false);
         }
