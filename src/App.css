@@ -1,3 +1,8 @@
+@media (max-width: 767px) {
+    h1 {
+        font-size: 1.5rem !important;
+    }
+}
 .page {
     display: flex;
     align-items: center;
@@ -42,6 +47,15 @@ form {
 .movie img {
     border-radius: 8px;
     margin-top: 8px;
+}
+header {
+    margin-top: 24px;
+}
+h1 {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 /**
  * Automatic version:

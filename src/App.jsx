@@ -62,7 +62,7 @@ function App() {
     return (
         <div className="page">
             <header className="header">
-                <h1 style={{ display: "inline-flex" }}>
+                <h1>
                     <img
                         style={{ marginRight: "8px" }}
                         height={48}
